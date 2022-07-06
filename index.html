@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8">
+		<title>Molécules Organiques</title>
+		<link href="css/representationmolecule.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <!-- Production -->
+        <script src="https://unpkg.com/@popperjs/core@2"></script>
+        <script src="https://unpkg.com/tippy.js@6"></script>
+	</head>
+
+<body>
+<img class="fd" src="img/structure-moleculaire.jpg"> 
+<!-- Image de fond -->
+<h1>Molécules organiques linéaires</h1>
+
+<div class="entree">
+    <div class="texte">
+        <!-- Choix de la famille de molécule organique -->
+        <label for="famille" class="famille1bis">Famille<span class="info" id="infofamille" >&#9432;</span></label>
+        <label class="famille1bis">Nombre de carbones<span class="info" id="infocarbone">&#9432;</span></label>
+        <label class="famille1bis" id="pos">Position de la fonction<span class="info" id="infoposition">&#9432;</span></label>
+    </div>
+    
+    <div class="texte">
+        <select name="famille" class="famille3bis" id="molecule">
+            <option value="Alcanes">Alcanes</option>
+            <option value="Alcenes">Alcènes</option>
+            <option value="Alcynes">Alcynes</option>
+            <option value="Alcools">Alcools</option>
+        </select>
+        <!-- Choix du nombre de carbones dans la chaîne carbonée -->
+        <span>  
+        <input class="famille3bis" id="nbc" type="number" min="1" max="15" value="1">
+        </span>
+        <!-- Choix de la position de la fonction dans la chaîne carbonée -->
+        <span>  
+        <input  id="posf" class="famille3bis"  type="number" min="1" max="15" value="1">  
+        </span>
+    </div>
+</div>
+
+<div class="sortie">
+    <div class="famille1">
+        <!-- Affichage de la formule brute grâce à la formule brute théorique -->
+            La formule brute est :
+            <div class="famille3" id="fb">
+                &nbsp;
+            </div>
+        </div>
+        <div class="famille1">
+        <!-- Affichage de la formule semi-développée -->
+            La formule semi-développée est :
+            <div class="famille3" id="fsd">
+                &nbsp;
+            </div>
+        </div>
+        <div class="famille1">
+        <!-- Affichage du nom de la molécule selon les règles de l'UICPA (Union internationale de chimie pure et appliquée) -->
+            Le nom de la molécule est :
+            <div class="famille3" id="nom">
+                &nbsp;
+            </div>
+        </div>
+        <div class="famille1">
+        <!-- Représentation de la molécule en affichant les différents atomes et les liaisons chimiques-->
+            La représentation de la molécule est :
+            <div class="famille4" id="formdev">
+                
+            </div>
+        </div>
+        
+</div>
+
+    
+    <script src="js/molecule.js"></script>
+    <script>
+        // With the above scripts loaded, you can call `tippy()` with a CSS
+        // selector and a `content` prop:
+        tippy('#infofamille', {
+          content: 'Une famille est un ensemble de molécules qui possèdent les mêmes propriétés chimiques',
+        });
+        tippy('#infocarbone', {
+          content: 'Le nombre de carbones choisi détermine la taille de la molécule',
+        });
+        tippy('#infoposition', {
+          content: 'Ici, vous pouvez choisir la position de la fonction dans la chaîne carbonée',
+        });
+      </script>
+</body>
+</html>
